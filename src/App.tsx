@@ -1,12 +1,13 @@
 import "./App.css";
 import Menu from "./components/Menu";
 import { useState, useEffect } from "react";
+import { cardType } from "./types";
 
 function App(): JSX.Element {
   const [cards, setCards] = useState<{ image: string }[]>([]);
 
   const fetchCards = async () => {
-    let allCards: { image: string }[] = [];
+    let allCards: cardType[] = [];
     for (let page = 1; ; page++) {
       const response = await fetch(
         `https://us.api.blizzard.com/hearthstone/cards?locale=en_US&gameMode=battlegrounds&tier=hero%2C3&page=${page}&access_token=EUhqNw4v9Lzcw24772M1KDV7weR5AEdJIf`
