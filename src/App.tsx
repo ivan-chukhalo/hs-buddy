@@ -1,5 +1,6 @@
 import "./App.css";
 import Menu from "./components/Menu";
+import Filters from "./components/Filters";
 import { useState, useEffect } from "react";
 import { cardType } from "./types";
 
@@ -34,6 +35,7 @@ function App(): JSX.Element {
   return (
     <>
       <Menu />
+      <Filters />
       <div className="container mx-auto flex flex-wrap">
         {cards.map((card): JSX.Element => {
           return <img src={card.image} width="240px" />;

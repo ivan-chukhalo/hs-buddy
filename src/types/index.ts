@@ -11,3 +11,5 @@ export type cardType = {
         quest: boolean
     }
 }
+
+export type entityType = ("All" | "Hero" | "Minion" | "Quest" | "Reward")
