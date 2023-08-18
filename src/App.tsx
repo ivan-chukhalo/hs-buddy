@@ -4,13 +4,13 @@ import { useState, useEffect } from "react";
 import { cardType } from "./types";
 
 function App(): JSX.Element {
-  const [cards, setCards] = useState<{ image: string }[]>([]);
+  const [cards, setCards] = useState<cardType[]>([]);
 
   const fetchCards = async () => {
     let allCards: cardType[] = [];
     for (let page = 1; ; page++) {
       const response = await fetch(
-        `https://us.api.blizzard.com/hearthstone/cards?locale=en_US&gameMode=battlegrounds&tier=hero%2C3&page=${page}&access_token=EUhqNw4v9Lzcw24772M1KDV7weR5AEdJIf`
+        `https://us.api.blizzard.com/hearthstone/cards?locale=en_US&gameMode=battlegrounds&tier=hero%2C3&page=${page}&access_token=EUjZGiDh44uSd0866TU2SPmg9hytrB6FzW`
       );
       const data = await response.json();
 
